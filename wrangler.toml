@@ -24,7 +24,7 @@ run_worker_first = false
 command = "npm run build"
 
 [triggers]
-crons = [ "*/5 * * * *" ]
+crons = [ "0 20 * * *" ] # 北京时间凌晨4点
 
 [[d1_databases]]
 binding = "DB"
@@ -41,3 +41,6 @@ bucket_name = "nodewarden-attachments"
 [[migrations]]
 tag = "v1-notifications-hub"
 new_sqlite_classes = [ "NotificationsHub" ]
+
+[vars]
+SIGNUPS_ALLOWED = "false" # 或者根据你的需求设为 true
